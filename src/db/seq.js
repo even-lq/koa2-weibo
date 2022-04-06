@@ -5,6 +5,7 @@
 const Sequelize = require('sequelize');
 const { MYSQL_CONF } = require('../conf/db');
 const { host, user, password, database } = MYSQL_CONF;
+const { isTest, isProd } = require('../utils/env');
 
 const conf = {
   host,

@@ -7,7 +7,7 @@
     "debug": "cross-env NODE_ENV=dev ./node_modules/.bin/nodemon --inspect=9229 bin/www",
     "prd": "cross-env NODE_ENV=prd pm2 start bin/www",
     "lint": "eslint --ext .js ./src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env NODE_ENV=test jest --runInBand --forceExit --colors"
   },
   "dependencies": {
     "debug": "^4.1.1",
@@ -32,7 +32,8 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.12.0",
     "nodemon": "^1.19.1",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "supertest": "^6.2.2"
   },
   "pre-commit": [
     "lint"
