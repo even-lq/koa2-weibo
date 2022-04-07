@@ -1,6 +1,8 @@
 const router = require('koa-router')();
+const { loginRedirect, loginCheck } = require('../middlewares/loginChecks');
 
-router.get('/', async (ctx, next) => {
+
+router.get('/', loginRedirect, async (ctx, next) => {
 
   // 读取模板文件，io操作是异步的
   await ctx.render('index', {
@@ -8,7 +10,7 @@ router.get('/', async (ctx, next) => {
   });
 });
 
-router.get('/string', async (ctx, next) => {
+router.get('/string', loginCheck, async (ctx, next) => {
   ctx.body = 'koa2 string';
 });
 

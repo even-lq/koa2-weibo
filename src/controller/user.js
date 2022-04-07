@@ -7,7 +7,8 @@ const { SuccessModel, ErrorModel } = require('../model/ResModel');
 const { 
   registerUserNameNotExistInfo,
   registerUserNameExistInfo,
-  registerFailInfo
+  registerFailInfo,
+  loginFailInfo
 } = require('../model/ErrorInfo');
 const doCrypto = require('../utils/cryp');
 
@@ -54,7 +55,29 @@ async function register({userName, password, gender}) {
   }
 }
 
+/**
+ * 登录
+ * @param {Object} ctx koa2 ctx
+ * @param {string} userName 用户名
+ * @param {string} password 密码
+ */
+async function login(ctx, userName, password) {
+  
+  // 业务逻辑处理
+  const userInfo = await getUserInfo(userName, doCrypto(password));
+  if (!userInfo) {
+    return new ErrorModel(loginFailInfo);
+  }
+
+  // 登陆成功后把用户信息放到session中
+  if (!ctx.session.userInfo) {
+    ctx.session.userInfo = userInfo;
+  }
+  return new SuccessModel();
+}
+
 module.exports = {
   isExist,
-  register
+  register,
+  login
 };

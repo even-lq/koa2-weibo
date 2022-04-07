@@ -35,7 +35,9 @@
                         alert(err)
                         return
                     }
-                    // 跳转到指定 url 或首页
+
+                    // 如果未登录访问【用户页面】会重定向到登录页
+                    // 登陆后会跳转到指定 url （用户登陆前想访问的）或首页
                     var redirectUrl = $.query.get('url') || '/'
                     location.href = redirectUrl
                 })
