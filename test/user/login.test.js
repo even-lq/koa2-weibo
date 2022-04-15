@@ -93,6 +93,7 @@ test('修改密码应该成功', async () => {
             newPassword: `p_${Date.now()}`
         })
         .set('cookie', COOKIE)
+    console.log('res.body.errno', res.body.errno)
     expect(res.body.errno).toBe(0)
 })
 
