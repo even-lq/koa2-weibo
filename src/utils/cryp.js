@@ -15,7 +15,7 @@ function _md5(content) {
 
 /**
  * 加密方法
- * @param {string} content 铭=明文
+ * @param {string} content 明文
  */
 function doCrypto(content) {
   const str = `password=${content}&key=${CRYPTO_SECRET_KEY}`;

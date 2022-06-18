@@ -57,7 +57,7 @@ async function register({userName, password, gender}) {
     });
     return new SuccessModel();
   } catch (error) {
-    console.error(ex.message, ex.stack);
+    console.error(error.message, error.stack);
     return new ErrorModel(registerFailInfo);
   }
 }

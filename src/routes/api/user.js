@@ -19,6 +19,10 @@ const { loginCheck } = require('../../middlewares/loginChecks');
 
 router.prefix('/api/user');
 
+router.get('/current', async (ctx, next) => {
+  console.log(ctx.session.userInfo);
+  ctx.body = ctx.session.userInfo;
+});
 // 注册路由
 router.post('/register', genValidator(userValidate), async (ctx, next) => {
   const { userName, password, gender } = ctx.request.body;
