@@ -42,6 +42,7 @@ async function createUser({userName, password, gender = 3, nickName = userName})
     gender,
     nickName
   });
+  console.log('service user', result.dataValues);
   return result.dataValues;
 }
 

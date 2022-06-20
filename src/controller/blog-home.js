@@ -17,6 +17,7 @@ async function create({ userId, content, image }) {
     
     // 创建微博
     const blog = await createBlog({ userId, content: xss(content), image });
+    console.log('controller blog', blog);
     return new SuccessModel(blog);
   } catch (ex) {
     console.error(ex.message, ex.stack);

@@ -17,6 +17,7 @@ router.post('/create', loginCheck, genValidator(blogValidate), async (ctx, next)
 
   // controller
   ctx.body = await create({ userId, content, image });
+  console.log('weibo body', ctx.body);
 });
 
 module.exports = router;
