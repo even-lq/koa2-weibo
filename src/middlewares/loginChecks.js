@@ -37,7 +37,7 @@ async function loginRedirect(ctx, next) {
     return;
   }
 
-  console.log('?', ctx.url);
+  // console.log('?', ctx.url);
   // 未登录
   ctx.redirect(`/login?url=${encodeURIComponent(ctx.url)}`);
 }

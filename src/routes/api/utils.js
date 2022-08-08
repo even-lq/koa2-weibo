@@ -24,7 +24,7 @@ router.post(
     const { size, path, name, type } = file;
 
     // controller
-    console.log('path', path);
+    // console.log('path', path);
     ctx.body = await saveFile({size, filePath: path, name, type});
   });
 

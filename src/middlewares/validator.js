@@ -14,6 +14,7 @@ function genValidator(validateFn) {
 
     // 数据校验
     const error = validateFn(ctx.request.body);
+    console.log(error);
     if (error) {
       ctx.body = new ErrorModel(jsonSchemaFileInfo);
       return;

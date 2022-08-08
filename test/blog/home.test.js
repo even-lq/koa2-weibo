@@ -21,7 +21,7 @@ test('创建一条微博，应该成功', async () => {
     })
     .set('cookie', COOKIE)
 
-  console.log('weibo', res.body)
+  // console.log('weibo', res.body)
   expect(res.body.errno).toBe(0)
   expect(res.body.data.content).toBe(content)
   expect(res.body.data.image).toBe(image)
