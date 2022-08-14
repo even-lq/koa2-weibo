@@ -3,7 +3,7 @@
  */
 
 const { Blog, User } = require('../db/model/index');
-const { formatUser } = require('./_format');
+const { formatUser, formatBlog } = require('./_format');
 
 /**
  * 创建微博
@@ -46,14 +46,16 @@ async function getBlogListByUser({ userName, pageIndex = 0, pageSize = 10 }) {
   // 获取 dataValues
   let blogList = res.rows
     .map(row => {
-      console.log(row.dataValues);
+      // console.log(row.dataValues);
       return row.dataValues;
-    })
-    .map(blogItem => {
-      const user = blogItem.user.dataValues;
-      blogItem.user = formatUser(user);
-      return blogItem; 
     });
+  blogList = formatBlog(blogList);
+
+  blogList.map(blogItem => {
+    const user = blogItem.user.dataValues;
+    blogItem.user = formatUser(user);
+    return blogItem; 
+  });
 
   return {
     count: res.count,
