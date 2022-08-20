@@ -9,6 +9,7 @@ const { getSquareBlogList } = require('../../controller/blog-square');
 const { 
   isExist,
 } = require('../../controller/user');
+const { getFans } = require('../../controller/user-relation');
 
 router.get('/', loginRedirect, async (ctx, next) => {
   await ctx.render('index', {});
@@ -48,13 +49,21 @@ router.get('/profile/:userName', loginRedirect, async (ctx, next) => {
   // controller
   const res = await getProfileBlogList(curUserName, 0);
   const { isEmpty, blogList, pageSize, pageIndex, count } = res.data;
+
+  // 获取粉丝
+  const fansRes = await getFans(curUserInfo.id);
+  const { fansCount, userList: list } = fansRes.data;
   await ctx.render('profile', {
     blogData: {
       isEmpty, blogList, pageSize, pageIndex, count
     },
     userData: {
       userInfo: curUserInfo,
-      isMe
+      isMe,
+      fansData: {
+        count: fansCount,
+        list
+      }
     }
   });
 });

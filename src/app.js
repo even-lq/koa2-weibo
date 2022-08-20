@@ -46,7 +46,7 @@ app.use(views(__dirname + '/views', {
 app.keys = [SESSION_SECRET_KEY];
 app.use(session({
   key: 'weibo.sid', // cookie name 默认是 koa.sid
-  prefix: 'weivo:sess:', // redis key的前缀，默认是 koa:sess:
+  prefix: 'weibo:sess:', // redis key的前缀，默认是 koa:sess:
   cookie: {
     pat: '/',
     httpOnly: true,
