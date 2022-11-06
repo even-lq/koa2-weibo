@@ -3,7 +3,7 @@
  */
 
 const server = require("../server")
-const { COOKIE } = require("../testUserInfo")
+const { Z_COOKIE } = require("../testUserInfo")
 
 let BLOG_ID = ''
 
@@ -19,7 +19,7 @@ test('创建一条微博，应该成功', async () => {
       content,
       image
     })
-    .set('cookie', COOKIE)
+    .set('cookie', Z_COOKIE)
 
   // console.log('weibo', res.body)
   expect(res.body.errno).toBe(0)
