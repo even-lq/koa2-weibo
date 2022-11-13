@@ -4,6 +4,7 @@
 
 const { User, UserRelation } = require('../db/model');
 const { formatUser } = require('./_format');
+const Sequelize = require('sequelize');
 
 /**
  * 通过【关注了谁】也就是followerId找到粉丝
@@ -19,7 +20,13 @@ async function getUsersByFollower(followerId) {
       {
         model: UserRelation,
         where: {
-          followerId
+          followerId,
+          userId: {
+
+            // userId !== followerId，过滤自己
+            // Sequelize.option.not equal
+            [Sequelize.Op.ne]: followerId
+          }
         }
       }
     ]
@@ -50,7 +57,13 @@ async function getFollowersByUser(userId) {
       }
     ],
     where: {
-      userId
+      userId,
+      followerId: {
+
+        //  followerId !== userId，过滤自己
+        // Sequelize.option.not equal
+        [Sequelize.Op.ne]: userId
+      }
     }
   });
 

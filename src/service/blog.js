@@ -28,6 +28,7 @@ async function getBlogListByUser({ userName, pageIndex = 0, pageSize = 10 }) {
   }
 
   // 执行查询
+  // 因为Blog.belongsTo(User),才能 Blog.findAndCountAll
   const res = await Blog.findAndCountAll({
     limit: pageSize, // 限制查询条目
     offset: pageSize * pageIndex, // 跳过多少条

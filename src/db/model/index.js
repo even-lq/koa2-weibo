@@ -6,17 +6,25 @@ const User = require('./User');
 const Blog = require('./Blog');
 const UserRelation = require('./UserRelation');
 
-// 创建Blog的外键
+// 创建Blog的外键，Blog表的userId是Blog表的外键，关联User表的Id
 Blog.belongsTo(User, {
   foreignKey: 'userId'
 });
 
+// followerId，userId关注的人的id
 UserRelation.belongsTo(User, {
   foreignKey: 'followerId'
 });
 
 User.hasMany(UserRelation, {
   foreignKey: 'userId'
+});
+
+// 创建Blog的外键，Blog表的userId是Blog表的外键，关联UserRelation表的followerId
+// 即使数据库里面没建成功，关系模型还是可以用于联表查询，联表查询与外键无关
+Blog.belongsTo(UserRelation, {
+  foreignKey: 'userId',
+  targetKey: 'followerId'
 });
 
 module.exports = {
