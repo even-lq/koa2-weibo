@@ -87,5 +87,11 @@ module.exports = {
   deleteBlogFailInfo: {
     errno: 11002,
     message: '删除微博失败，请重试'
-  }
+  },
+
+  // 获取微博列表失败
+  getBlogListFailInfo: {
+    errno: 11003,
+    message: '获取微博列表失败，请重试'
+  },
 };

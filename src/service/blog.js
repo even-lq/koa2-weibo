@@ -2,7 +2,7 @@
  * @description 微博service
  */
 
-const { Blog, User } = require('../db/model/index');
+const { Blog, User, UserRelation } = require('../db/model/index');
 const { formatUser, formatBlog } = require('./_format');
 
 /**
@@ -64,7 +64,50 @@ async function getBlogListByUser({ userName, pageIndex = 0, pageSize = 10 }) {
   };
 }
 
+/**
+ * 获取该用户已关注的人的微博列表
+ * @param {Object} param0 
+ */
+async function getFollowersBlogList({ userId, pageIndex = 0, pageSize = 10 }) {
+  
+  // 三表查询，查找blog，inner join user和userRelation
+  const res = await Blog.findAndCountAll({
+    limit: pageSize, // 每页有多少条
+    offset: pageSize * pageIndex, // 跳过多少条
+    order: [
+      ['id', 'desc']
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['userName', 'nickName', 'picture']
+      },
+      {
+        model: UserRelation,
+        attributes: ['userId', 'followerId'],
+        where: { userId }
+      }
+    ]
+  });
+  console.log(res);
+  console.log('--------------test');
+
+  // 格式化
+  let blogList = res.rows.map(row => row.dataValues);
+  blogList = formatBlog(blogList);
+  blogList = blogList.map(blogItem => {
+    blogItem.user = formatUser(blogItem.user.dataValues);
+    return blogItem;
+  });
+
+  return {
+    count: res.count,
+    blogList
+  };
+}
+
 module.exports = {
   createBlog,
-  getBlogListByUser
+  getBlogListByUser,
+  getFollowersBlogList 
 };

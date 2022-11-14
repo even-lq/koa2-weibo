@@ -10,9 +10,56 @@ const {
   isExist,
 } = require('../../controller/user');
 const { getFans, getFollowers } = require('../../controller/user-relation');
+const { getHomeBlogList } = require('../../controller/blog-home');
+
 
 router.get('/', loginRedirect, async (ctx, next) => {
-  await ctx.render('index', {});
+
+  const userInfo = ctx.session.userInfo;
+  const { id: userId } = userInfo;
+
+  // 获取首页数据
+  // controller
+  const res = await getHomeBlogList(userId);
+  console.log(res);
+  console.log('--------------test');
+  const {
+    isEmpty,
+    blogList,
+    pageSize,
+    pageIndex,
+    count
+  } = res.data;
+  
+  // 获取粉丝
+  const fansRes = await getFans(userId);
+  const { fansCount, userList: list } = fansRes.data;
+
+  // 获取已关注的人
+  const followersRes = await getFollowers(userId);
+  const { followersCount, followersList } = followersRes.data;
+
+  await ctx.render('index', {
+    userData: {
+      userInfo,
+      fansData: {
+        count: fansCount,
+        list
+      },
+      followersData: {
+        count: followersCount,
+        list: followersList
+      }
+    },
+    blogData: {
+      isEmpty,
+      blogList,
+      pageSize,
+      pageIndex,
+      count
+    }
+  });
+
 });
 
 router.get('/profile', loginRedirect, async (ctx, next) => {
