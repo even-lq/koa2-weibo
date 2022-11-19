@@ -1,7 +1,7 @@
 /**
  * @description 数据格式化
  */
-const { DEFAULT_PICTURE } = require('../conf/constant');
+const { DEFAULT_PICTURE, REG_FOR_AT_WHO } = require('../conf/constant');
 const { timeFormat } = require('../utils/date');
 
 /**
@@ -33,6 +33,17 @@ function _formatDBTime(obj) {
  */
 function _formatContent(obj) {
   obj.contentFormat = obj.content;
+
+  // 格式化 @
+  // 将@内容变成链接<a></a>
+  // from '哈喽 @张三 - zhangsan 你好'
+  // to '哈喽 <a href="/profile/zhangsan">张三</a> 你好'
+  obj.contentFormat = obj.contentFormat.replace(
+    REG_FOR_AT_WHO,
+    (matchStr, nickName, userName) => {
+      return `<a href="/profile/${userName}">@${nickName}</a>`;
+    }
+  );
   return obj;
 }
 
@@ -46,10 +57,12 @@ function formatBlog(list) {
     return list;
   }
 
+  // 数组
   if (list instanceof Array) {
     return list.map(_formatDBTime).map(_formatContent);
   }
 
+  // 对象
   let res = list;
   res = _formatDBTime(res);
   res = _formatContent(res);

@@ -16,6 +16,7 @@ const userValidate = require('../../validator/user');
 const { genValidator } = require('../../middlewares/validator');
 const { isTest } = require('../../utils/env');
 const { loginCheck } = require('../../middlewares/loginChecks');
+const { getFollowers } = require('../../controller/user-relation');
 
 router.prefix('/api/user');
 
@@ -77,6 +78,15 @@ router.patch('/changePassword', loginCheck, genValidator(userValidate), async (c
 // 退出登录
 router.post('/logout', loginCheck, async (ctx, next) => {
   ctx.body = await logout(ctx);
+});
+
+// 退出登录
+router.get('/getAtList', loginCheck, async (ctx, next) => {
+  const { id: userId } = ctx.session.userInfo;
+  const res = await getFollowers(userId);
+  const { followersList } = res.data;
+  const list = followersList.map(user => `${user.nickName} - ${user.userName}`);
+  ctx.body = list;
 });
 
 module.exports = router;
