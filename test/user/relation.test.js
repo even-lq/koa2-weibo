@@ -40,6 +40,18 @@ test('获取李四的粉丝，应该有张三', async () => {
 })
 
 // 获取关注者
+test('获取张三的at列表，应该有李四', async () => {
+  const res = await server
+    .get('/api/user/getAtList')
+    .set('cookie', Z_COOKIE)
+  const atList = res.body;
+  const hasUserName = atList.some(item => {
+    return item.indexOf(`- ${L_USER_NAME}`) > 0;
+  })
+  expect(hasUserName).toBe(true)
+})
+
+// 获取at列表
 test('获取张三关注的人，应该有李四', async () => {
   const res = await getFollowers(Z_ID)
   const { followersCount, followersList } = res.data

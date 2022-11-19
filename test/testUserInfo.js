@@ -10,9 +10,9 @@
 module.exports = {
   Z_ID: 3,
   Z_USER_NAME: 'zs',
-  Z_COOKIE: 'weibo.sid=JWQZ3Smro-ufUKNHpRyyLXZJFf74nPZI; weibo.sid.sig=6Kohd7QRwZAmXIRwYfKsedMsG-0',
+  Z_COOKIE: 'weibo.sid=hJ6itXL2_Gj7utSihnZzr_E8ZzuFwmyj; weibo.sid.sig=L2CuX5jHdT6UIiuqZQflFHKYEFM',
 
   L_ID: 2,
   L_USER_NAME: 'lisi',
-  L_COOKIE: 'weibo.sid=JWQZ3Smro-ufUKNHpRyyLXZJFf74nPZI; weibo.sid.sig=6Kohd7QRwZAmXIRwYfKsedMsG-0'
+  L_COOKIE: 'weibo.sid=hJ6itXL2_Gj7utSihnZzr_E8ZzuFwmyj; weibo.sid.sig=L2CuX5jHdT6UIiuqZQflFHKYEFM'
 }
