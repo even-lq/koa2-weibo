@@ -11,7 +11,7 @@ const {
 } = require('../../controller/user');
 const { getFans, getFollowers } = require('../../controller/user-relation');
 const { getHomeBlogList } = require('../../controller/blog-home');
-const { getAtMeCount } =require('../../controller/blog-at');
+const { getAtMeCount, getAtMeBlogList } =require('../../controller/blog-at');
 
 router.get('/', loginRedirect, async (ctx, next) => {
 
@@ -134,6 +134,7 @@ router.get('/profile/:userName', loginRedirect, async (ctx, next) => {
   });
 });
 
+// 广场页
 router.get('/square', loginRedirect, async (ctx, next) => {
   // controller
   const res = await getSquareBlogList(0);
@@ -143,6 +144,33 @@ router.get('/square', loginRedirect, async (ctx, next) => {
       isEmpty, blogList, pageSize, pageIndex, count
     }
   });
+});
+
+// 艾特我的
+router.get('/at-me', loginRedirect, async (ctx, next) => {
+
+  const { id: userId } = ctx.session.userInfo;
+  // 获取@数量
+  const atCountRes = await getAtMeCount(userId);
+  const atCount = atCountRes.data.count;
+
+  // 获取第一页列表
+  // controller
+  const res = await getAtMeBlogList(userId);
+  const { isEmpty, blogList, pageSize, pageIndex, count } = res.data;
+
+  // 渲染页面
+  await ctx.render('atMe', {
+    atCount,
+    blogData: {
+      isEmpty, blogList, pageSize, pageIndex, count
+    }
+  });
+
+  // 标记为已读(渲染页面后)
+  if (atCount > 0) {
+    
+  }
 });
 
 module.exports = router;

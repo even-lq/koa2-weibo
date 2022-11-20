@@ -20,7 +20,7 @@ const AtRelation = seq.define('atRelation', {
     comment: '微博Id'
   },
   isRead: {
-    type: INTEGER,
+    type: BOOLEAN,
     allowNull: false,
     defaultValue: false,
     comment: '是否已读'
