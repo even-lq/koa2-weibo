@@ -5,6 +5,7 @@
 const User = require('./User');
 const Blog = require('./Blog');
 const UserRelation = require('./UserRelation');
+const AtRelation = require('./AtRelation');
 
 // 创建Blog的外键，Blog表的userId是Blog表的外键，关联User表的Id
 Blog.belongsTo(User, {
@@ -27,8 +28,14 @@ Blog.belongsTo(UserRelation, {
   targetKey: 'followerId'
 });
 
+// 一条博客可以@很多人
+Blog.hasMany(AtRelation, {
+  foreignKey: 'blogId'
+});
+
 module.exports = {
   User,
   Blog,
-  UserRelation
+  UserRelation,
+  AtRelation
 };
