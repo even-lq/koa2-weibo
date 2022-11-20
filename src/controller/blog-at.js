@@ -2,9 +2,9 @@
  * @description 微博 @ 关系 controller
  */
 
-const { getAtRelationCount, getAtUserBlogList } = require('../service/atRelation');
+const { getAtRelationCount, getAtUserBlogList, updateAtRelation } = require('../service/atRelation');
 const { SuccessModel } = require('../model/ResModel');
-const { PAGE_SIZEO, PAGE_SIZE } = require('../conf/constant');
+const {  PAGE_SIZE } = require('../conf/constant');
 
 /**
  * 获取@ 我的微博数量
@@ -38,7 +38,26 @@ async function getAtMeBlogList(userId, pageIndex = 0) {
   });
 }
 
+/**
+ * 获取@ 我的微博列表
+ * @param {number} userId 用户唯一标识
+ * @param {number} pageIndex 页码
+ */
+async function markAsRead(userId) {
+  
+  // service
+  try {
+    await updateAtRelation(
+      { newIsRead: true },
+      { userId, isRead: false }
+    );
+  } catch (error) {
+    console.error(ex);
+  }
+}
+
 module.exports = {
   getAtMeCount,
-  getAtMeBlogList
+  getAtMeBlogList,
+  markAsRead
 };

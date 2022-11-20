@@ -11,7 +11,7 @@ const {
 } = require('../../controller/user');
 const { getFans, getFollowers } = require('../../controller/user-relation');
 const { getHomeBlogList } = require('../../controller/blog-home');
-const { getAtMeCount, getAtMeBlogList } =require('../../controller/blog-at');
+const { getAtMeCount, getAtMeBlogList, markAsRead } =require('../../controller/blog-at');
 
 router.get('/', loginRedirect, async (ctx, next) => {
 
@@ -167,9 +167,9 @@ router.get('/at-me', loginRedirect, async (ctx, next) => {
     }
   });
 
-  // 标记为已读(渲染页面后)
+  // 标记为已读(渲染页面后，优化性能)
   if (atCount > 0) {
-    
+    await markAsRead(userId);
   }
 });
 
