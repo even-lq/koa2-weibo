@@ -15,6 +15,22 @@ async function createAtRelation(blogId, userId) {
   return res.dataValues;
 }
 
+/**
+ * 获取 @ 用户的微博数量（未读的） 
+ * @param {number} userId 用户id
+ * @returns 
+ */
+async function getAtRelationCount(userId) {
+  const res = await AtRelation.findAndCountAll({
+    where: {
+      userId,
+      isRead: false
+    }
+  });
+  return res.count;
+}
+
 module.exports = {
-  createAtRelation
+  createAtRelation,
+  getAtRelationCount
 };

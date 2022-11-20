@@ -11,7 +11,7 @@ const {
 } = require('../../controller/user');
 const { getFans, getFollowers } = require('../../controller/user-relation');
 const { getHomeBlogList } = require('../../controller/blog-home');
-
+const { getAtMeCount } =require('../../controller/blog-at');
 
 router.get('/', loginRedirect, async (ctx, next) => {
 
@@ -21,8 +21,6 @@ router.get('/', loginRedirect, async (ctx, next) => {
   // 获取首页数据
   // controller
   const res = await getHomeBlogList(userId);
-  console.log(res);
-  console.log('--------------test');
   const {
     isEmpty,
     blogList,
@@ -39,6 +37,9 @@ router.get('/', loginRedirect, async (ctx, next) => {
   const followersRes = await getFollowers(userId);
   const { followersCount, followersList } = followersRes.data;
 
+  // 获取at 我的数量
+  const atCountRes = await getAtMeCount(userId);
+
   await ctx.render('index', {
     userData: {
       userInfo,
@@ -49,7 +50,8 @@ router.get('/', loginRedirect, async (ctx, next) => {
       followersData: {
         count: followersCount,
         list: followersList
-      }
+      },
+      atCount: atCountRes.data.count
     },
     blogData: {
       isEmpty,
@@ -108,6 +110,9 @@ router.get('/profile/:userName', loginRedirect, async (ctx, next) => {
   // 我是否关注了此人?
   const amIFollowed = list.some(item => item.userName === myUserName);
 
+  // 获取at 我的数量
+  const atCountRes = await getAtMeCount(myUserInfo.id);
+
   await ctx.render('profile', {
     blogData: {
       isEmpty, blogList, pageSize, pageIndex, count
@@ -116,6 +121,7 @@ router.get('/profile/:userName', loginRedirect, async (ctx, next) => {
       userInfo: curUserInfo,
       isMe,
       amIFollowed,
+      atCount: atCountRes.data.count,
       fansData: {
         count: fansCount,
         list
