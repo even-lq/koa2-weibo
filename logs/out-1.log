@@ -1,0 +1,755 @@
+2022-11-23 19:14:07:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:14:07:   --> GET /javascripts/my-ajax.js 200 19ms 2.08kb
+2022-11-23 19:14:07:   <-- GET /xx.png
+2022-11-23 19:14:07: GET /xx.png - 14ms
+2022-11-23 19:14:07:   --> GET /xx.png 200 24ms 2.26kb
+2022-11-23 19:14:20:   <-- GET /javascripts/jquery.caret.js
+2022-11-23 19:14:20:   -x- GET /javascripts/jquery.caret.js 200 15ms 12.86kb
+2022-11-23 19:14:36:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:14:36:   -x- GET /javascripts/my-ajax.js 200 4ms 2.08kb
+2022-11-23 19:14:36:   <-- GET /css/jquery.atwho.css
+2022-11-23 19:14:36:   --> GET /css/jquery.atwho.css 200 6ms 1.28kb
+2022-11-23 19:14:36:   <-- GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG
+2022-11-23 19:14:36:   <-- GET /javascripts/query-object.js
+2022-11-23 19:14:36:   <-- GET /1668872599154.avatar.jpg
+2022-11-23 19:14:36:   <-- GET /xx.png
+2022-11-23 19:14:36:   --> GET /javascripts/query-object.js 200 8ms 8.02kb
+2022-11-23 19:14:36:   <-- GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG
+2022-11-23 19:14:36: GET /xx.png - 17ms
+2022-11-23 19:14:36:   --> GET /xx.png 200 31ms 2.26kb
+2022-11-23 19:14:36:   --> GET /1668872599154.avatar.jpg 200 36ms 468.94kb
+2022-11-23 19:14:36:   --> GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG 200 50ms 1.7mb
+2022-11-23 19:14:36:   --> GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG 200 37ms 1.7mb
+2022-11-23 19:14:36:   <-- GET /1668937986136.%E6%9F%B4%E7%8A%AC%E5%A4%B4%E5%83%8F.jpg
+2022-11-23 19:14:36:   --> GET /1668937986136.%E6%9F%B4%E7%8A%AC%E5%A4%B4%E5%83%8F.jpg 200 7ms 37.87kb
+2022-11-23 19:14:36:   <-- GET /
+2022-11-23 19:14:36:   <-- GET /favicon.ico
+2022-11-23 19:14:36: Executing (default): SELECT count(`blog`.`id`) AS `count` FROM `blogs` AS `blog` LEFT OUTER JOIN `users` AS `user` ON `blog`.`userId` = `user`.`id` INNER JOIN `userRelations` AS `userRelation` ON `blog`.`userId` = `userRelation`.`followerId` AND `userRelation`.`userId` = 2;
+2022-11-23 19:14:36: Executing (default): SELECT `blog`.`id`, `blog`.`userId`, `blog`.`content`, `blog`.`image`, `blog`.`createdAt`, `blog`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture`, `userRelation`.`id` AS `userRelation.id`, `userRelation`.`userId` AS `userRelation.userId`, `userRelation`.`followerId` AS `userRelation.followerId` FROM `blogs` AS `blog` LEFT OUTER JOIN `users` AS `user` ON `blog`.`userId` = `user`.`id` INNER JOIN `userRelations` AS `userRelation` ON `blog`.`userId` = `userRelation`.`followerId` AND `userRelation`.`userId` = 2 ORDER BY `blog`.`id` DESC LIMIT 0, 5;
+2022-11-23 19:14:36: {
+  count: 11,
+  rows: [
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    }
+  ]
+}
+2022-11-23 19:14:36: --------------test
+2022-11-23 19:14:36: Executing (default): SELECT count(`user`.`id`) AS `count` FROM `users` AS `user` INNER JOIN `userRelations` AS `userRelations` ON `user`.`id` = `userRelations`.`userId` AND `userRelations`.`followerId` = 2 AND `userRelations`.`userId` != 2;
+2022-11-23 19:14:36: Executing (default): SELECT `user`.`id`, `user`.`userName`, `user`.`nickName`, `user`.`picture`, `userRelations`.`id` AS `userRelations.id`, `userRelations`.`userId` AS `userRelations.userId`, `userRelations`.`followerId` AS `userRelations.followerId`, `userRelations`.`createdAt` AS `userRelations.createdAt`, `userRelations`.`updatedAt` AS `userRelations.updatedAt` FROM `users` AS `user` INNER JOIN `userRelations` AS `userRelations` ON `user`.`id` = `userRelations`.`userId` AND `userRelations`.`followerId` = 2 AND `userRelations`.`userId` != 2 ORDER BY `user`.`id` DESC;
+2022-11-23 19:14:36: Executing (default): SELECT count(`userRelation`.`id`) AS `count` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2;
+2022-11-23 19:14:36: Executing (default): SELECT `userRelation`.`id`, `userRelation`.`userId`, `userRelation`.`followerId`, `userRelation`.`createdAt`, `userRelation`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2 ORDER BY `userRelation`.`id` DESC;
+2022-11-23 19:14:36: [
+  {
+    id: 4,
+    userId: 2,
+    followerId: 1,
+    createdAt: 2022-11-20T09:51:29.000Z,
+    updatedAt: 2022-11-20T09:51:29.000Z,
+    user: user {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false
+    }
+  }
+]
+2022-11-23 19:14:36: -------------
+2022-11-23 19:14:36: user {
+  dataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  _previousDataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: false,
+    _schema: null,
+    _schemaDelimiter: '',
+    include: undefined,
+    includeNames: undefined,
+    includeMap: undefined,
+    includeValidated: true,
+    raw: true,
+    attributes: [ 'id', 'userName', 'nickName', 'picture' ]
+  },
+  isNewRecord: false
+}
+2022-11-23 19:14:36: {
+  count: 1,
+  userList: [
+    {
+      id: 1,
+      userName: 'zs',
+      nickName: 'zs',
+      picture: '/1668872599154.avatar.jpg'
+    }
+  ]
+}
+2022-11-23 19:14:36: Executing (default): SELECT count(*) AS `count` FROM `atRelations` AS `atRelation` WHERE `atRelation`.`userId` = 2 AND `atRelation`.`isRead` = false;
+2022-11-23 19:14:36: Executing (default): SELECT `id`, `userId`, `blogId`, `isRead`, `createdAt`, `updatedAt` FROM `atRelations` AS `atRelation` WHERE `atRelation`.`userId` = 2 AND `atRelation`.`isRead` = false;
+2022-11-23 19:14:36:   <-- GET /
+2022-11-23 19:14:36: GET /favicon.ico - 11ms
+2022-11-23 19:14:36:   --> GET /favicon.ico 200 38ms 2.26kb
+2022-11-23 19:14:36: Executing (default): SELECT count(`blog`.`id`) AS `count` FROM `blogs` AS `blog` LEFT OUTER JOIN `users` AS `user` ON `blog`.`userId` = `user`.`id` INNER JOIN `userRelations` AS `userRelation` ON `blog`.`userId` = `userRelation`.`followerId` AND `userRelation`.`userId` = 2;
+2022-11-23 19:14:36: Executing (default): SELECT `blog`.`id`, `blog`.`userId`, `blog`.`content`, `blog`.`image`, `blog`.`createdAt`, `blog`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture`, `userRelation`.`id` AS `userRelation.id`, `userRelation`.`userId` AS `userRelation.userId`, `userRelation`.`followerId` AS `userRelation.followerId` FROM `blogs` AS `blog` LEFT OUTER JOIN `users` AS `user` ON `blog`.`userId` = `user`.`id` INNER JOIN `userRelations` AS `userRelation` ON `blog`.`userId` = `userRelation`.`followerId` AND `userRelation`.`userId` = 2 ORDER BY `blog`.`id` DESC LIMIT 0, 5;
+2022-11-23 19:14:36: GET / - 107ms
+2022-11-23 19:14:36: {
+  count: 11,
+  rows: [
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    }
+  ]
+}
+2022-11-23 19:14:36: --------------test
+2022-11-23 19:14:36: Executing (default): SELECT count(`user`.`id`) AS `count` FROM `users` AS `user` INNER JOIN `userRelations` AS `userRelations` ON `user`.`id` = `userRelations`.`userId` AND `userRelations`.`followerId` = 2 AND `userRelations`.`userId` != 2;
+2022-11-23 19:14:36: Executing (default): SELECT `user`.`id`, `user`.`userName`, `user`.`nickName`, `user`.`picture`, `userRelations`.`id` AS `userRelations.id`, `userRelations`.`userId` AS `userRelations.userId`, `userRelations`.`followerId` AS `userRelations.followerId`, `userRelations`.`createdAt` AS `userRelations.createdAt`, `userRelations`.`updatedAt` AS `userRelations.updatedAt` FROM `users` AS `user` INNER JOIN `userRelations` AS `userRelations` ON `user`.`id` = `userRelations`.`userId` AND `userRelations`.`followerId` = 2 AND `userRelations`.`userId` != 2 ORDER BY `user`.`id` DESC;
+2022-11-23 19:14:36: Executing (default): SELECT count(`userRelation`.`id`) AS `count` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2;
+2022-11-23 19:14:36: Executing (default): SELECT `userRelation`.`id`, `userRelation`.`userId`, `userRelation`.`followerId`, `userRelation`.`createdAt`, `userRelation`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2 ORDER BY `userRelation`.`id` DESC;
+2022-11-23 19:14:36: [
+  {
+    id: 4,
+    userId: 2,
+    followerId: 1,
+    createdAt: 2022-11-20T09:51:29.000Z,
+    updatedAt: 2022-11-20T09:51:29.000Z,
+    user: user {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false
+    }
+  }
+]
+2022-11-23 19:14:36: -------------
+2022-11-23 19:14:36: user {
+  dataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  _previousDataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: false,
+    _schema: null,
+    _schemaDelimiter: '',
+    include: undefined,
+    includeNames: undefined,
+    includeMap: undefined,
+    includeValidated: true,
+    raw: true,
+    attributes: [ 'id', 'userName', 'nickName', 'picture' ]
+  },
+  isNewRecord: false
+}
+2022-11-23 19:14:36: {
+  count: 1,
+  userList: [
+    {
+      id: 1,
+      userName: 'zs',
+      nickName: 'zs',
+      picture: '/1668872599154.avatar.jpg'
+    }
+  ]
+}
+2022-11-23 19:14:36: Executing (default): SELECT count(*) AS `count` FROM `atRelations` AS `atRelation` WHERE `atRelation`.`userId` = 2 AND `atRelation`.`isRead` = false;
+2022-11-23 19:14:36: Executing (default): SELECT `id`, `userId`, `blogId`, `isRead`, `createdAt`, `updatedAt` FROM `atRelations` AS `atRelation` WHERE `atRelation`.`userId` = 2 AND `atRelation`.`isRead` = false;
+2022-11-23 19:14:36: GET / - 29ms
+2022-11-23 19:14:36:   --> GET / 200 39ms 13.73kb
+2022-11-23 19:14:36:   <-- GET /css/main.css
+2022-11-23 19:14:36:   <-- GET /css/right.css
+2022-11-23 19:14:36:   <-- GET /css/list.css
+2022-11-23 19:14:36:   -x- GET /css/main.css 200 4ms 661b
+2022-11-23 19:14:36:   --> GET /css/right.css 200 5ms 532b
+2022-11-23 19:14:36:   --> GET /css/list.css 200 6ms 548b
+2022-11-23 19:15:47:   <-- GET /css/jquery.atwho.css
+2022-11-23 19:15:47:   -x- GET /css/jquery.atwho.css 200 6ms 1.28kb
+2022-11-23 19:15:47:   <-- GET /javascripts/jquery.atwho.js
+2022-11-23 19:15:47:   --> GET /javascripts/jquery.atwho.js 200 3ms 36.49kb
+2022-11-23 19:15:47:   <-- GET /javascripts/query-object.js
+2022-11-23 19:15:47:   <-- GET /1668872599154.avatar.jpg
+2022-11-23 19:15:47:   --> GET /javascripts/query-object.js 200 4ms 8.02kb
+2022-11-23 19:15:47:   <-- GET /xx.png
+2022-11-23 19:15:47:   <-- GET /1668937986136.%E6%9F%B4%E7%8A%AC%E5%A4%B4%E5%83%8F.jpg
+2022-11-23 19:15:47:   --> GET /1668872599154.avatar.jpg 200 10ms 468.94kb
+2022-11-23 19:15:47:   --> GET /1668937986136.%E6%9F%B4%E7%8A%AC%E5%A4%B4%E5%83%8F.jpg 200 7ms 37.87kb
+2022-11-23 19:15:47: GET /xx.png - 5ms
+2022-11-23 19:15:47:   --> GET /xx.png 200 11ms 2.26kb
+2022-11-23 19:15:48:   <-- GET /favicon.ico
+2022-11-23 19:15:48: GET /favicon.ico - 3ms
+2022-11-23 19:15:48:   --> GET /favicon.ico 200 4ms 2.26kb
+2022-11-23 19:20:51:   <-- GET /
+2022-11-23 19:20:51: Executing (default): SELECT count(`blog`.`id`) AS `count` FROM `blogs` AS `blog` LEFT OUTER JOIN `users` AS `user` ON `blog`.`userId` = `user`.`id` INNER JOIN `userRelations` AS `userRelation` ON `blog`.`userId` = `userRelation`.`followerId` AND `userRelation`.`userId` = 2;
+2022-11-23 19:20:51: Executing (default): SELECT `blog`.`id`, `blog`.`userId`, `blog`.`content`, `blog`.`image`, `blog`.`createdAt`, `blog`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture`, `userRelation`.`id` AS `userRelation.id`, `userRelation`.`userId` AS `userRelation.userId`, `userRelation`.`followerId` AS `userRelation.followerId` FROM `blogs` AS `blog` LEFT OUTER JOIN `users` AS `user` ON `blog`.`userId` = `user`.`id` INNER JOIN `userRelations` AS `userRelation` ON `blog`.`userId` = `userRelation`.`followerId` AND `userRelation`.`userId` = 2 ORDER BY `blog`.`id` DESC LIMIT 0, 5;
+2022-11-23 19:20:51: {
+  count: 11,
+  rows: [
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    }
+  ]
+}
+2022-11-23 19:20:51: --------------test
+2022-11-23 19:20:51: Executing (default): SELECT count(`user`.`id`) AS `count` FROM `users` AS `user` INNER JOIN `userRelations` AS `userRelations` ON `user`.`id` = `userRelations`.`userId` AND `userRelations`.`followerId` = 2 AND `userRelations`.`userId` != 2;
+2022-11-23 19:20:51: Executing (default): SELECT `user`.`id`, `user`.`userName`, `user`.`nickName`, `user`.`picture`, `userRelations`.`id` AS `userRelations.id`, `userRelations`.`userId` AS `userRelations.userId`, `userRelations`.`followerId` AS `userRelations.followerId`, `userRelations`.`createdAt` AS `userRelations.createdAt`, `userRelations`.`updatedAt` AS `userRelations.updatedAt` FROM `users` AS `user` INNER JOIN `userRelations` AS `userRelations` ON `user`.`id` = `userRelations`.`userId` AND `userRelations`.`followerId` = 2 AND `userRelations`.`userId` != 2 ORDER BY `user`.`id` DESC;
+2022-11-23 19:20:51: Executing (default): SELECT count(`userRelation`.`id`) AS `count` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2;
+2022-11-23 19:20:51: Executing (default): SELECT `userRelation`.`id`, `userRelation`.`userId`, `userRelation`.`followerId`, `userRelation`.`createdAt`, `userRelation`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2 ORDER BY `userRelation`.`id` DESC;
+2022-11-23 19:20:51: [
+  {
+    id: 4,
+    userId: 2,
+    followerId: 1,
+    createdAt: 2022-11-20T09:51:29.000Z,
+    updatedAt: 2022-11-20T09:51:29.000Z,
+    user: user {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false
+    }
+  }
+]
+2022-11-23 19:20:51: -------------
+2022-11-23 19:20:51: user {
+  dataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  _previousDataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: false,
+    _schema: null,
+    _schemaDelimiter: '',
+    include: undefined,
+    includeNames: undefined,
+    includeMap: undefined,
+    includeValidated: true,
+    raw: true,
+    attributes: [ 'id', 'userName', 'nickName', 'picture' ]
+  },
+  isNewRecord: false
+}
+2022-11-23 19:20:51: {
+  count: 1,
+  userList: [
+    {
+      id: 1,
+      userName: 'zs',
+      nickName: 'zs',
+      picture: '/1668872599154.avatar.jpg'
+    }
+  ]
+}
+2022-11-23 19:20:51: Executing (default): SELECT count(*) AS `count` FROM `atRelations` AS `atRelation` WHERE `atRelation`.`userId` = 2 AND `atRelation`.`isRead` = false;
+2022-11-23 19:20:51: Executing (default): SELECT `id`, `userId`, `blogId`, `isRead`, `createdAt`, `updatedAt` FROM `atRelations` AS `atRelation` WHERE `atRelation`.`userId` = 2 AND `atRelation`.`isRead` = false;
+2022-11-23 19:20:51: GET / - 30ms
+2022-11-23 19:20:51:   --> GET / 200 34ms 13.73kb
+2022-11-23 19:20:51:   <-- GET /css/main.css
+2022-11-23 19:20:51:   -x- GET /css/main.css 200 3ms 661b
+2022-11-23 19:20:51:   <-- GET /css/list.css
+2022-11-23 19:20:51:   -x- GET /css/list.css 200 2ms 548b
+2022-11-23 19:20:51:   <-- GET /css/right.css
+2022-11-23 19:20:51:   --> GET /css/right.css 200 3ms 532b
+2022-11-23 19:20:51:   <-- GET /css/jquery.atwho.css
+2022-11-23 19:20:51:   --> GET /css/jquery.atwho.css 200 2ms 1.28kb
+2022-11-23 19:20:51:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:20:51:   --> GET /javascripts/my-ajax.js 200 1ms 2.08kb
+2022-11-23 19:20:51:   <-- GET /javascripts/jquery.caret.js
+2022-11-23 19:20:51:   --> GET /javascripts/jquery.caret.js 200 3ms 12.86kb
+2022-11-23 19:20:51:   <-- GET /javascripts/jquery.atwho.js
+2022-11-23 19:20:51:   --> GET /javascripts/jquery.atwho.js 200 3ms 36.49kb
+2022-11-23 19:20:51:   <-- GET /javascripts/query-object.js
+2022-11-23 19:20:51:   --> GET /javascripts/query-object.js 200 2ms 8.02kb
+2022-11-23 19:20:51:   <-- GET /1668872599154.avatar.jpg
+2022-11-23 19:20:51:   --> GET /1668872599154.avatar.jpg 200 5ms 468.94kb
+2022-11-23 19:20:51:   <-- GET /xx.png
+2022-11-23 19:20:51: GET /xx.png - 2ms
+2022-11-23 19:20:51:   --> GET /xx.png 200 4ms 2.26kb
+2022-11-23 19:20:51:   <-- GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG
+2022-11-23 19:20:51:   --> GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG 200 18ms 1.7mb
+2022-11-23 19:20:51:   <-- GET /1668937986136.%E6%9F%B4%E7%8A%AC%E5%A4%B4%E5%83%8F.jpg
+2022-11-23 19:20:51:   --> GET /1668937986136.%E6%9F%B4%E7%8A%AC%E5%A4%B4%E5%83%8F.jpg 200 2ms 37.87kb
+2022-11-23 19:20:51:   <-- GET /api/user/getAtList
+2022-11-23 19:20:51: Executing (default): SELECT count(`userRelation`.`id`) AS `count` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2;
+2022-11-23 19:20:51: Executing (default): SELECT `userRelation`.`id`, `userRelation`.`userId`, `userRelation`.`followerId`, `userRelation`.`createdAt`, `userRelation`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2 ORDER BY `userRelation`.`id` DESC;
+2022-11-23 19:20:51:   <-- GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG
+2022-11-23 19:20:51: [
+  {
+    id: 4,
+    userId: 2,
+    followerId: 1,
+    createdAt: 2022-11-20T09:51:29.000Z,
+    updatedAt: 2022-11-20T09:51:29.000Z,
+    user: user {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false
+    }
+  }
+]
+2022-11-23 19:20:51: -------------
+2022-11-23 19:20:51: user {
+  dataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  _previousDataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: false,
+    _schema: null,
+    _schemaDelimiter: '',
+    include: undefined,
+    includeNames: undefined,
+    includeMap: undefined,
+    includeValidated: true,
+    raw: true,
+    attributes: [ 'id', 'userName', 'nickName', 'picture' ]
+  },
+  isNewRecord: false
+}
+2022-11-23 19:20:51: {
+  count: 1,
+  userList: [
+    {
+      id: 1,
+      userName: 'zs',
+      nickName: 'zs',
+      picture: '/1668872599154.avatar.jpg'
+    }
+  ]
+}
+2022-11-23 19:20:51: GET /api/user/getAtList - 8ms
+2022-11-23 19:20:51:   --> GET /api/user/getAtList 200 10ms 11b
+2022-11-23 19:20:51:   --> GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG 200 13ms 1.7mb
+2022-11-23 19:20:51:   <-- GET /favicon.ico
+2022-11-23 19:20:51: GET /favicon.ico - 2ms
+2022-11-23 19:20:51:   --> GET /favicon.ico 200 5ms 2.26kb
+2022-11-23 19:21:02:   <-- GET /setting
+2022-11-23 19:21:02: GET /setting - 9ms
+2022-11-23 19:21:02:   --> GET /setting 200 14ms 7.52kb
+2022-11-23 19:21:02:   <-- GET /css/main.css
+2022-11-23 19:21:02:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:21:02:   --> GET /css/main.css 200 3ms 661b
+2022-11-23 19:21:02:   --> GET /javascripts/my-ajax.js 200 2ms 2.08kb
+2022-11-23 19:21:02:   <-- GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG
+2022-11-23 19:21:02:   <-- GET /javascripts/query-object.js
+2022-11-23 19:21:02:   --> GET /javascripts/query-object.js 200 2ms 8.02kb
+2022-11-23 19:21:02:   --> GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG 200 10ms 1.7mb
+2022-11-23 19:21:02:   <-- GET /favicon.ico
+2022-11-23 19:21:02: GET /favicon.ico - 2ms
+2022-11-23 19:21:02:   --> GET /favicon.ico 200 4ms 2.26kb
+2022-11-23 19:21:06:   <-- POST /api/user/logout
+2022-11-23 19:21:06: POST /api/user/logout - 1ms
+2022-11-23 19:21:06:   --> POST /api/user/logout 200 13ms 21b
+2022-11-23 19:21:08:   <-- GET /login
+2022-11-23 19:21:08: GET /login - 2ms
+2022-11-23 19:21:08:   --> GET /login 200 5ms 2.55kb
+2022-11-23 19:21:08:   <-- GET /css/main.css
+2022-11-23 19:21:08:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:21:08:   --> GET /javascripts/my-ajax.js 200 2ms 2.08kb
+2022-11-23 19:21:08:   --> GET /css/main.css 200 4ms 661b
+2022-11-23 19:21:08:   <-- GET /favicon.ico
+2022-11-23 19:21:08: GET /favicon.ico - 4ms
+2022-11-23 19:21:08:   --> GET /favicon.ico 200 6ms 2.26kb
+2022-11-23 19:21:13:   <-- POST /api/user/login
+2022-11-23 19:21:13: Executing (default): SELECT `id`, `userName`, `nickName`, `picture`, `city` FROM `users` AS `user` WHERE `user`.`userName` = 'lisi' AND `user`.`password` = 'e3fde2d0da721f03e2f2d8de655d73f2';
+2022-11-23 19:21:13: POST /api/user/login - 6ms
+2022-11-23 19:21:13:   --> POST /api/user/login 200 7ms 21b
+2022-11-23 19:21:13:   <-- GET /
+2022-11-23 19:21:13: Executing (default): SELECT count(`blog`.`id`) AS `count` FROM `blogs` AS `blog` LEFT OUTER JOIN `users` AS `user` ON `blog`.`userId` = `user`.`id` INNER JOIN `userRelations` AS `userRelation` ON `blog`.`userId` = `userRelation`.`followerId` AND `userRelation`.`userId` = 2;
+2022-11-23 19:21:13: Executing (default): SELECT `blog`.`id`, `blog`.`userId`, `blog`.`content`, `blog`.`image`, `blog`.`createdAt`, `blog`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture`, `userRelation`.`id` AS `userRelation.id`, `userRelation`.`userId` AS `userRelation.userId`, `userRelation`.`followerId` AS `userRelation.followerId` FROM `blogs` AS `blog` LEFT OUTER JOIN `users` AS `user` ON `blog`.`userId` = `user`.`id` INNER JOIN `userRelations` AS `userRelation` ON `blog`.`userId` = `userRelation`.`followerId` AND `userRelation`.`userId` = 2 ORDER BY `blog`.`id` DESC LIMIT 0, 5;
+2022-11-23 19:21:13: {
+  count: 11,
+  rows: [
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    },
+    blog {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false,
+      user: [user],
+      userRelation: [userRelation]
+    }
+  ]
+}
+2022-11-23 19:21:13: --------------test
+2022-11-23 19:21:13: Executing (default): SELECT count(`user`.`id`) AS `count` FROM `users` AS `user` INNER JOIN `userRelations` AS `userRelations` ON `user`.`id` = `userRelations`.`userId` AND `userRelations`.`followerId` = 2 AND `userRelations`.`userId` != 2;
+2022-11-23 19:21:13: Executing (default): SELECT `user`.`id`, `user`.`userName`, `user`.`nickName`, `user`.`picture`, `userRelations`.`id` AS `userRelations.id`, `userRelations`.`userId` AS `userRelations.userId`, `userRelations`.`followerId` AS `userRelations.followerId`, `userRelations`.`createdAt` AS `userRelations.createdAt`, `userRelations`.`updatedAt` AS `userRelations.updatedAt` FROM `users` AS `user` INNER JOIN `userRelations` AS `userRelations` ON `user`.`id` = `userRelations`.`userId` AND `userRelations`.`followerId` = 2 AND `userRelations`.`userId` != 2 ORDER BY `user`.`id` DESC;
+2022-11-23 19:21:13: Executing (default): SELECT count(`userRelation`.`id`) AS `count` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2;
+2022-11-23 19:21:13: Executing (default): SELECT `userRelation`.`id`, `userRelation`.`userId`, `userRelation`.`followerId`, `userRelation`.`createdAt`, `userRelation`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2 ORDER BY `userRelation`.`id` DESC;
+2022-11-23 19:21:13: [
+  {
+    id: 4,
+    userId: 2,
+    followerId: 1,
+    createdAt: 2022-11-20T09:51:29.000Z,
+    updatedAt: 2022-11-20T09:51:29.000Z,
+    user: user {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false
+    }
+  }
+]
+2022-11-23 19:21:13: -------------
+2022-11-23 19:21:13: user {
+  dataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  _previousDataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: false,
+    _schema: null,
+    _schemaDelimiter: '',
+    include: undefined,
+    includeNames: undefined,
+    includeMap: undefined,
+    includeValidated: true,
+    raw: true,
+    attributes: [ 'id', 'userName', 'nickName', 'picture' ]
+  },
+  isNewRecord: false
+}
+2022-11-23 19:21:13: {
+  count: 1,
+  userList: [
+    {
+      id: 1,
+      userName: 'zs',
+      nickName: 'zs',
+      picture: '/1668872599154.avatar.jpg'
+    }
+  ]
+}
+2022-11-23 19:21:13: Executing (default): SELECT count(*) AS `count` FROM `atRelations` AS `atRelation` WHERE `atRelation`.`userId` = 2 AND `atRelation`.`isRead` = false;
+2022-11-23 19:21:13: Executing (default): SELECT `id`, `userId`, `blogId`, `isRead`, `createdAt`, `updatedAt` FROM `atRelations` AS `atRelation` WHERE `atRelation`.`userId` = 2 AND `atRelation`.`isRead` = false;
+2022-11-23 19:21:13: GET / - 24ms
+2022-11-23 19:21:13:   --> GET / 200 27ms 13.73kb
+2022-11-23 19:21:13:   <-- GET /css/main.css
+2022-11-23 19:21:13:   <-- GET /css/list.css
+2022-11-23 19:21:13:   <-- GET /css/right.css
+2022-11-23 19:21:13:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:21:13:   <-- GET /css/jquery.atwho.css
+2022-11-23 19:21:13:   <-- GET /javascripts/jquery.caret.js
+2022-11-23 19:21:13:   --> GET /css/list.css 200 5ms 548b
+2022-11-23 19:21:13:   --> GET /css/main.css 200 6ms 661b
+2022-11-23 19:21:13:   <-- GET /javascripts/jquery.atwho.js
+2022-11-23 19:21:13:   --> GET /css/jquery.atwho.css 200 5ms 1.28kb
+2022-11-23 19:21:13:   --> GET /css/right.css 200 6ms 532b
+2022-11-23 19:21:13:   --> GET /javascripts/my-ajax.js 200 6ms 2.08kb
+2022-11-23 19:21:13:   --> GET /javascripts/jquery.caret.js 200 5ms 12.86kb
+2022-11-23 19:21:13:   --> GET /javascripts/jquery.atwho.js 200 4ms 36.49kb
+2022-11-23 19:21:13:   <-- GET /javascripts/query-object.js
+2022-11-23 19:21:13:   <-- GET /1668872599154.avatar.jpg
+2022-11-23 19:21:13:   <-- GET /xx.png
+2022-11-23 19:21:13:   <-- GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG
+2022-11-23 19:21:13:   --> GET /javascripts/query-object.js 200 5ms 8.02kb
+2022-11-23 19:21:13: GET /xx.png - 4ms
+2022-11-23 19:21:13:   --> GET /xx.png 200 9ms 2.26kb
+2022-11-23 19:21:13:   --> GET /1668872599154.avatar.jpg 200 13ms 468.94kb
+2022-11-23 19:21:13:   --> GET /1668872716112.%E5%9B%BE%E5%9B%BE%E5%A4%B4%E5%83%8F.JPG 200 15ms 1.7mb
+2022-11-23 19:21:13:   <-- GET /api/user/getAtList
+2022-11-23 19:21:13: Executing (default): SELECT count(`userRelation`.`id`) AS `count` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2;
+2022-11-23 19:21:13: Executing (default): SELECT `userRelation`.`id`, `userRelation`.`userId`, `userRelation`.`followerId`, `userRelation`.`createdAt`, `userRelation`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2 ORDER BY `userRelation`.`id` DESC;
+2022-11-23 19:21:13: [
+  {
+    id: 4,
+    userId: 2,
+    followerId: 1,
+    createdAt: 2022-11-20T09:51:29.000Z,
+    updatedAt: 2022-11-20T09:51:29.000Z,
+    user: user {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false
+    }
+  }
+]
+2022-11-23 19:21:13: -------------
+2022-11-23 19:21:13: user {
+  dataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  _previousDataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: false,
+    _schema: null,
+    _schemaDelimiter: '',
+    include: undefined,
+    includeNames: undefined,
+    includeMap: undefined,
+    includeValidated: true,
+    raw: true,
+    attributes: [ 'id', 'userName', 'nickName', 'picture' ]
+  },
+  isNewRecord: false
+}
+2022-11-23 19:21:13: {
+  count: 1,
+  userList: [
+    {
+      id: 1,
+      userName: 'zs',
+      nickName: 'zs',
+      picture: '/1668872599154.avatar.jpg'
+    }
+  ]
+}
+2022-11-23 19:21:13: GET /api/user/getAtList - 7ms
+2022-11-23 19:21:13:   --> GET /api/user/getAtList 200 10ms 11b
+2022-11-23 19:21:13:   <-- GET /favicon.ico
+2022-11-23 19:21:13: GET /favicon.ico - 2ms
+2022-11-23 19:21:13:   --> GET /favicon.ico 200 7ms 2.26kb

@@ -1,0 +1,124 @@
+2022-11-23 19:10:12:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:10:12:   -x- GET /javascripts/my-ajax.js 200 13ms 2.08kb
+2022-11-23 19:10:12:   <-- GET /favicon.ico
+2022-11-23 19:10:12: GET /favicon.ico - 10ms
+2022-11-23 19:10:12:   --> GET /favicon.ico 200 17ms 2.26kb
+2022-11-23 19:10:20:   <-- GET /
+2022-11-23 19:10:20: GET / - 2ms
+2022-11-23 19:10:20:   --> GET / 302 4ms 59b
+2022-11-23 19:10:20:   <-- GET /login?url=%2F
+2022-11-23 19:10:20: GET /login?url=%2F - 2ms
+2022-11-23 19:10:20:   --> GET /login?url=%2F 200 5ms 2.55kb
+2022-11-23 19:10:20:   <-- GET /css/main.css
+2022-11-23 19:10:20:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:10:20:   -x- GET /css/main.css 200 4ms 661b
+2022-11-23 19:10:20:   -x- GET /javascripts/my-ajax.js 200 5ms 2.08kb
+2022-11-23 19:10:20:   <-- GET /favicon.ico
+2022-11-23 19:10:20: GET /favicon.ico - 5ms
+2022-11-23 19:10:20:   --> GET /favicon.ico 200 7ms 2.26kb
+2022-11-23 19:10:32:   <-- GET /
+2022-11-23 19:10:32: GET / - 1ms
+2022-11-23 19:10:32:   --> GET / 302 6ms 59b
+2022-11-23 19:10:32:   <-- GET /login?url=%2F
+2022-11-23 19:10:32: GET /login?url=%2F - 3ms
+2022-11-23 19:10:32:   --> GET /login?url=%2F 200 6ms 2.55kb
+2022-11-23 19:10:32:   <-- GET /css/main.css
+2022-11-23 19:10:32:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:10:32:   --> GET /css/main.css 200 4ms 661b
+2022-11-23 19:10:32:   --> GET /javascripts/my-ajax.js 200 3ms 2.08kb
+2022-11-23 19:10:32:   <-- GET /favicon.ico
+2022-11-23 19:10:32: GET /favicon.ico - 2ms
+2022-11-23 19:10:32:   --> GET /favicon.ico 200 4ms 2.26kb
+2022-11-23 19:11:33:   <-- GET /login?url=%2F
+2022-11-23 19:11:33: GET /login?url=%2F - 3ms
+2022-11-23 19:11:33:   --> GET /login?url=%2F 200 6ms 2.55kb
+2022-11-23 19:11:33:   <-- GET /css/main.css
+2022-11-23 19:11:33:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:11:33:   -x- GET /css/main.css 200 4ms 661b
+2022-11-23 19:11:33:   --> GET /javascripts/my-ajax.js 200 4ms 2.08kb
+2022-11-23 19:11:33:   <-- GET /favicon.ico
+2022-11-23 19:11:33: GET /favicon.ico - 3ms
+2022-11-23 19:11:33:   --> GET /favicon.ico 200 4ms 2.26kb
+2022-11-23 19:11:34:   <-- GET /login?url=%2F
+2022-11-23 19:11:34: GET /login?url=%2F - 2ms
+2022-11-23 19:11:34:   --> GET /login?url=%2F 200 4ms 2.55kb
+2022-11-23 19:11:34:   <-- GET /css/main.css
+2022-11-23 19:11:34:   <-- GET /javascripts/my-ajax.js
+2022-11-23 19:11:34:   -x- GET /css/main.css 200 4ms 661b
+2022-11-23 19:11:34:   --> GET /javascripts/my-ajax.js 200 4ms 2.08kb
+2022-11-23 19:13:41:   <-- GET /javascripts/query-object.js
+2022-11-23 19:13:41:   --> GET /javascripts/query-object.js 200 3ms 8.02kb
+2022-11-23 19:13:48:   <-- GET /javascripts/query-object.js
+2022-11-23 19:13:48:   --> GET /javascripts/query-object.js 200 2ms 8.02kb
+2022-11-23 19:13:50:   <-- GET /javascripts/query-object.js
+2022-11-23 19:13:50:   --> GET /javascripts/query-object.js 200 2ms 8.02kb
+2022-11-23 19:14:07:   <-- GET /css/right.css
+2022-11-23 19:14:07:   --> GET /css/right.css 200 5ms 532b
+2022-11-23 19:14:11:   <-- GET /favicon.ico
+2022-11-23 19:14:11: GET /favicon.ico - 9ms
+2022-11-23 19:14:11:   --> GET /favicon.ico 200 23ms 2.26kb
+2022-11-23 19:14:12:   <-- GET /favicon.ico
+2022-11-23 19:14:12: GET /favicon.ico - 6ms
+2022-11-23 19:14:12:   --> GET /favicon.ico 200 10ms 2.26kb
+2022-11-23 19:14:12:   <-- GET /api/user/getAtList
+2022-11-23 19:14:13: Executing (default): SELECT count(`userRelation`.`id`) AS `count` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2;
+2022-11-23 19:14:13: Executing (default): SELECT `userRelation`.`id`, `userRelation`.`userId`, `userRelation`.`followerId`, `userRelation`.`createdAt`, `userRelation`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`userName` AS `user.userName`, `user`.`nickName` AS `user.nickName`, `user`.`picture` AS `user.picture` FROM `userRelations` AS `userRelation` LEFT OUTER JOIN `users` AS `user` ON `userRelation`.`followerId` = `user`.`id` WHERE `userRelation`.`userId` = 2 AND `userRelation`.`followerId` != 2 ORDER BY `userRelation`.`id` DESC;
+2022-11-23 19:14:13: [
+  {
+    id: 4,
+    userId: 2,
+    followerId: 1,
+    createdAt: 2022-11-20T09:51:29.000Z,
+    updatedAt: 2022-11-20T09:51:29.000Z,
+    user: user {
+      dataValues: [Object],
+      _previousDataValues: [Object],
+      uniqno: 1,
+      _changed: Set(0) {},
+      _options: [Object],
+      isNewRecord: false
+    }
+  }
+]
+2022-11-23 19:14:13: -------------
+2022-11-23 19:14:13: user {
+  dataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  _previousDataValues: {
+    id: 1,
+    userName: 'zs',
+    nickName: 'zs',
+    picture: '/1668872599154.avatar.jpg'
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: false,
+    _schema: null,
+    _schemaDelimiter: '',
+    include: undefined,
+    includeNames: undefined,
+    includeMap: undefined,
+    includeValidated: true,
+    raw: true,
+    attributes: [ 'id', 'userName', 'nickName', 'picture' ]
+  },
+  isNewRecord: false
+}
+2022-11-23 19:14:13: {
+  count: 1,
+  userList: [
+    {
+      id: 1,
+      userName: 'zs',
+      nickName: 'zs',
+      picture: '/1668872599154.avatar.jpg'
+    }
+  ]
+}
+2022-11-23 19:14:13: GET /api/user/getAtList - 90ms
+2022-11-23 19:14:13:   --> GET /api/user/getAtList 200 94ms 11b
